@@ -7,6 +7,8 @@ if ( strlen($_EXTCONF) ) {
 	$extConf = unserialize($_EXTCONF);
 }
 
+// Add static typoscript configurations
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Video CE (Youtube, Vimeo)');
 
 // --------------------------------------------------------------------
 // Additional Video Content Type
