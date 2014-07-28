@@ -1,0 +1,11 @@
+/* ----------------------------------------
+ * Video CE constants
+ */
+plugin.tx_videoce {
+    video {
+        default {
+            # cat=tx_videoce.website/video/012; type=string; label=For usage with a fonticon. Class for i-tag with link for lightbox view.
+            extLinkIcon = fa fa-external-link
+        }
+    }
+}

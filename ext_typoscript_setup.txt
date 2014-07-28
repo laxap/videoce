@@ -1,0 +1,83 @@
+
+/* ----------------------------------------
+ * Video CE settings
+ */
+tt_content.videoce_videocontent.20 {
+    settings {
+        default {
+            extLinkIcon = {$plugin.tx_videoce.video.default.extLinkIcon}
+            width = 300
+            height = 150
+        }
+
+        videoTypes {
+            youtube {
+                pattern = #^(?:https?://|//)?(?:www\.|m\.)?(?:youtu\.be/|youtube\.com(?:/embed/|/v/|/watch\?v=|/watch\?.+&v=))([\w-]{11})#x
+                class = Simplicity\Videoce\Domain\Model\YoutubeVideo
+
+                config {
+                    pattern = #^(?:https?://|//)?(?:www\.|m\.)?(?:youtu\.be/|youtube\.com(?:/embed/|/v/|/watch\?v=|/watch\?.+&v=))([\w-]{11})#x
+                    # normal link youtube website
+                    link {
+                        url = https://www.youtube.com/watch?v=
+                        urlParam =
+                    }
+                    # embed config
+                    embed {
+                        # url for embedding the video
+                        url = //www.youtube.com/embed/
+                        #url = //www.youtube-nocookie.com/embed/
+                        # params for embed url
+                        urlParam = ?rel=0
+                        # with subtitles (in specific lang)
+                        #urlParam = ?rel=0&cc_lang_pref=de&cc_load_policy=1
+                        urlParamPlaylist = &playlist=
+                        # iframe attribs
+                        iframeAttrib = frameborder="0" allowfullscreen
+                    }
+                    # show in lightbox
+                    lightbox {
+                        enabled = 1
+                        url = https://www.youtube.com/watch?v=
+                        urlParam = &width=720&height=400
+                    }
+                }
+            }
+
+            vimeo {
+                pattern = #^(?:https?://)?(?:www\.)?(?:vimeo\.com)#x
+                class = Simplicity\Videoce\Domain\Model\VimeoVideo
+
+                config {
+                    respectAspectRatio = height
+                    api {
+                        url = http://vimeo.com/api/oembed.json?url=
+                    }
+
+                    # normal link vimeo website
+                    link {
+                        url = https://vimeo.com/
+                        urlParam =
+                    }
+                    # embed config
+                    embed {
+                        # url for embedding the video
+                        url = //player.vimeo.com/video/
+                        # see http://developer.vimeo.com/player/embedding
+                        urlParam = ?portrait=0&byline=0
+                        urlParamPlaylist =
+                        # iframe attribs
+                        iframeAttrib = frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+                    }
+                    # show in lightbox
+                    lightbox {
+                        enabled = 1
+                        url = https://vimeo.com/
+                        urlParam = &width=720&height=400
+                    }
+                }
+            }
+        }
+
+    }
+}

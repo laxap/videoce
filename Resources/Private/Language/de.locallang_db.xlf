@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-01-01T18:00:00Z" product-name="videoce">
+		<header/>
+		<body>
+			<trans-unit id="video.ctype.title" xml:space="preserve" approved="yes">
+				<source>Video</source>
+			<target state="translated">Video</target></trans-unit>
+			<trans-unit id="video.ctype.description" xml:space="preserve" approved="yes">
+				<source>Videos from Youtube or Vimeo</source>
+			<target state="translated">Videos von Youtube oder Vimeo</target></trans-unit>
+
+			<trans-unit id="video.links" xml:space="preserve" approved="yes">
+				<source>Video Links (one per line, Youtube or Vimeo)</source>
+			<target state="translated">Video Links (einen per Zeile, Youtube oder Vimeo)</target></trans-unit>
+			<trans-unit id="video.caption" xml:space="preserve" approved="yes">
+				<source>Video Captions (one per line)</source>
+			<target state="translated">Video Beschreibung (eine per Zeile)</target></trans-unit>
+
+			<trans-unit id="video.pal.widthheight" xml:space="preserve" approved="yes">
+				<source>Width and height of video</source>
+			<target state="translated">Breite und Höhe des Videos</target></trans-unit>
+			<trans-unit id="video.width" xml:space="preserve" approved="yes">
+				<source>Max. width</source>
+			<target state="translated">Max. Breite</target></trans-unit>
+			<trans-unit id="video.height" xml:space="preserve" approved="yes">
+				<source>Max. height</source>
+			<target state="translated">Max. Höhe</target></trans-unit>
+			<trans-unit id="video.clickenlarge" xml:space="preserve" approved="yes">
+				<source>Click-enlarge</source>
+			<target state="translated">Klick-Vergrössern</target></trans-unit>
+
+			<trans-unit id="video.position" xml:space="preserve" approved="yes">
+				<source>Position of caption</source>
+			<target state="translated">Position der Beschreibung</target></trans-unit>
+
+            <trans-unit id="video.pal.rowcol" xml:space="preserve" approved="yes">
+				<source>Layout</source>
+			<target state="translated">Layout</target></trans-unit>
+            <trans-unit id="video.rows" xml:space="preserve" approved="yes">
+				<source>Rows</source>
+			<target state="translated">Zeilen</target></trans-unit>
+            <trans-unit id="video.cols" xml:space="preserve" approved="yes">
+				<source>Columns</source>
+			<target state="translated">Spalten</target></trans-unit>
+        </body>
+	</file>
+</xliff>
