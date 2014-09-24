@@ -304,7 +304,8 @@ class ExternalVideo extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject 
 	 */
 	protected function retrieveVideoData($link) {
 		// get infos from vimeo by sending url
-		$response = file_get_contents($this->config['api']['url'] . urlencode($link));
+		// proxy problem fix: thanks to Sébastien Convers
+		$response = \TYPO3\CMS\Core\Utility\GeneralUtility::getUrl($this->config['api']['url'] . urlencode($link));
 		if ( $response ) {
 			$videoData = json_decode($response, true);
 			if ( is_array($videoData) ) {
