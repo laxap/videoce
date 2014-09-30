@@ -1,0 +1,2 @@
+.. |img-includestatic|      image:: ../Images/Administration/IncludeStatic.png
+.. :align: left

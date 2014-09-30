@@ -21,10 +21,10 @@
 				<source>Width and height of video</source>
 			</trans-unit>
 			<trans-unit id="video.width" xml:space="preserve">
-				<source>Max. width</source>
+				<source>Width</source>
 			</trans-unit>
 			<trans-unit id="video.height" xml:space="preserve">
-				<source>Max. height</source>
+				<source>Height</source>
 			</trans-unit>
 			<trans-unit id="video.clickenlarge" xml:space="preserve">
 				<source>Click-enlarge</source>

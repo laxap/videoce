@@ -21,11 +21,11 @@
 				<source>Width and height of video</source>
 			<target state="translated">Breite und Höhe des Videos</target></trans-unit>
 			<trans-unit id="video.width" xml:space="preserve" approved="yes">
-				<source>Max. width</source>
-			<target state="translated">Max. Breite</target></trans-unit>
+				<source>Width</source>
+			<target state="translated">Breite</target></trans-unit>
 			<trans-unit id="video.height" xml:space="preserve" approved="yes">
-				<source>Max. height</source>
-			<target state="translated">Max. Höhe</target></trans-unit>
+				<source>Height</source>
+			<target state="translated">Höhe</target></trans-unit>
 			<trans-unit id="video.clickenlarge" xml:space="preserve" approved="yes">
 				<source>Click-enlarge</source>
 			<target state="translated">Klick-Vergrössern</target></trans-unit>

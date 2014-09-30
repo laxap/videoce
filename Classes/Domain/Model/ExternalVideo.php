@@ -335,7 +335,7 @@ class ExternalVideo extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject 
 			return false;
 		}
 		foreach ( $videoTypes as $videoType => $videoTypeSettings ) {
-			if (preg_match($videoTypeSettings['pattern'], $link)) {
+			if (preg_match($videoTypeSettings['config']['pattern'], $link)) {
 				return $videoType;
 			}
 		}

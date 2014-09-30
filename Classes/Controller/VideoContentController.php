@@ -32,33 +32,18 @@ namespace Simplicity\Videoce\Controller;
  */
 class VideoContentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
-	const VIDEO_TYPE_YOUTUBE = 'Youtube';
-	const VIDEO_TYPE_VIMEO = 'Vimeo';
-
 
 	/**
-	 * Action show
-	 *
 	 * @return void
 	 */
 	public function showAction() {
-		// get content object
-		$contentObj = $this->configurationManager->getContentObject();
-		// initial check
-		if ( ! is_object($contentObj) || ! is_array($contentObj->data) ) {
-			$this->view->assign('videos', 0);
-			return;
-		}
-
 		// get content data
-		$data = $contentObj->data;
-		// check if video links defined
-		if ( trim($data['image_link']) == '' ) {
+		$data = $this->getContentObjectData();
+		if ( $data === false ) {
 			$this->view->assign('videos', 0);
 			return;
 		}
 
-		// set pure ts settings
 		// link to platform icon
 		$this->view->assign('extLinkIcon',$this->settings['default']['extLinkIcon']);
 
@@ -67,6 +52,7 @@ class VideoContentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 			$this->view->assign('videos', 0);
 			return;
 		}
+
 		if ( $data['imagecols'] > 1 ) {
 			$cols = $data['imagecols'];
 			$colIndex = 0;
@@ -81,11 +67,13 @@ class VideoContentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 				$colsCount++;
 			}
 			$this->view->assign('videos', $videoColArray);
-			$this->view->assign('spanNum', floor(12 / $cols));
+			$this->view->assign('colClass', $this->settings['colClasses'][$cols]);
+			$this->view->assign('rowClass', $this->settings['rowClass']);
 		} else {
 			// no cols
 			$this->view->assign('videos', $videoObjArray);
-			$this->view->assign('spanNum', 0);
+			$this->view->assign('colClass', 0);
+			$this->view->assign('rowClass', $this->settings['rowClass']);
 		}
 		// caption position
 		if ( $data['imagecaption_position']  ) {
@@ -94,14 +82,34 @@ class VideoContentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 			$this->view->assign('captionPosition', '');
 		}
 
-		// full data
+		// full data (for cstm templates)
 		$this->view->assign('data', $data);
 
-		// add fitvids
-		$this->addJsFooterLib('typo3conf/ext/videoce/Resources/Public/Js/jquery.fitvid.js', 'jQueryFitvid');
-		$this->addJsFooterLib('typo3conf/ext/videoce/Resources/Public/Js/videoce.js', 'videoce');
+		// add javascript files
+		$this->includeJsFiles();
 	}
 
+
+	/** @cond
+	 * --- internal methods ---
+	 * @endcond
+	 */
+	
+	/**
+	 * @return array|bool
+	 */
+	protected function getContentObjectData() {
+		// get content object
+		$contentObj = $this->configurationManager->getContentObject();
+		if ( ! is_object($contentObj) ) {
+			return false;
+		}
+		// check if video links set
+		if ( ! is_array($contentObj->data) || trim($contentObj->data['image_link']) == '' ) {
+			return false;
+		}
+		return $contentObj->data;
+	}
 
 	/**
 	 * @param string $links
@@ -158,20 +166,26 @@ class VideoContentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 		return $videoObjList;
 	}
 
-
 	/**
-	 * @param $file
-	 * @param string $key
-	 * @param bool $excludeFromConcatenation
+	 * @return bool
 	 */
-	protected function addJsFooterLib($file, $key = '', $excludeFromConcatenation = false) {
-		if ( $key == '' ) {
-			$key = $this->extensionName;
+	protected function includeJsFiles() {
+		if ( ! isset($this->settings['jsFiles']) && ! is_array($this->settings['jsFiles']) && count($this->settings['jsFiles']) == 0 ) {
+			return false;
 		}
-		$GLOBALS['TSFE']->getPageRenderer()->addJsFooterLibrary($key, $file, 'text/javascript', false, false, '', $excludeFromConcatenation);
+		// add as footer file
+		if ( isset($this->settings['jsIncludeAsFooterFile']) && $this->settings['jsIncludeAsFooterFile'] == 1 ) {
+			foreach ( $this->settings['jsFiles'] as $jsFile ) {
+				$GLOBALS['TSFE']->getPageRenderer()->addJsFooterFile($jsFile);
+			}
+			return true;
+		}
+		// add as footer libs
+		foreach ( $this->settings['jsFiles'] as $key => $jsFile ) {
+			$GLOBALS['TSFE']->getPageRenderer()->addJsFooterLibrary($key, $jsFile);
+		}
+		return true;
 	}
-
-
 
 }
 ?>

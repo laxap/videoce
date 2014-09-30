@@ -2,15 +2,15 @@
 
 <f:section name="main">
     <f:if condition="{videos}">
-        <f:if condition="{spanNum}">
+        <f:if condition="{colClass}">
             <f:then>
                 <f:if condition="{data.image_noRows}">
                     <f:then>
-                        <div class="row">
+                        <div class="{rowClass}">
                         <f:for each="{videos}" as="videoRow" key="colIndex" >
                             <f:for each="{videoRow}" as="video" key="index" >
-                                <div class="col-md-{spanNum}">
-                                    <div class="video-wrapper"><f:render section="videoItem" arguments="{video:video, data:data, captionPosition:captionPosition}" /></div>
+                                <div class="{colClass}">
+                                    <div class="video-wrapper"><f:render section="videoItem" arguments="{video:video, data:data, captionPosition:captionPosition, extLinkIcon:extLinkIcon}" /></div>
                                 </div>
                             </f:for>
                         </f:for>
@@ -18,10 +18,10 @@
                     </f:then>
                     <f:else>
                         <f:for each="{videos}" as="videoRow" key="colIndex" >
-                            <div class="row">
+                            <div class="{rowClass}">
                                 <f:for each="{videoRow}" as="video" key="index" >
-                                    <div class="col-md-{spanNum}">
-                                        <div class="video-wrapper"><f:render section="videoItem" arguments="{video:video, data:data, captionPosition:captionPosition}" /></div>
+                                    <div class="{colClass}">
+                                        <div class="video-wrapper"><f:render section="videoItem" arguments="{video:video, data:data, captionPosition:captionPosition, extLinkIcon:extLinkIcon}" /></div>
                                     </div>
                                 </f:for>
                             </div>
@@ -30,7 +30,7 @@
                 </f:if>
             </f:then>
             <f:else>
-                <f:for each="{videos}" as="video" key="index" ><div class="video-wrapper"><f:render section="videoItem" arguments="{video:video, data:data, captionPosition:captionPosition}" /></div></f:for>
+                <f:for each="{videos}" as="video" key="index" ><div class="video-wrapper"><f:render section="videoItem" arguments="{video:video, data:data, captionPosition:captionPosition, extLinkIcon:extLinkIcon}" /></div></f:for>
             </f:else>
         </f:if>
     </f:if>
@@ -39,7 +39,7 @@
 <f:section name="videoItem">
     <f:format.raw>{video.embedCode}</f:format.raw>
     <f:if condition="{data.image_zoom}">
-        <span style="float: right; margin-left: 10px;"><a rel="prettyPhoto[c{data.uid}]" href="{video.normalLinkUrl}"><i class="{extLinkIcon}"></i></a></span>
+        <span class="videoce-zoom"><a rel="{settings.clickEnlargeATagRel}[c{data.uid}]" href="{video.linkUrl}"><i class="{extLinkIcon}"></i></a></span>
     </f:if>
     <f:if condition="{video.caption} == ' '">
         <f:then><p class="caption-{captionPosition}">&nbsp;</p></f:then>

@@ -3,10 +3,11 @@
 	Hint: following expression |my_substition_value| will be replaced when rendering doc.
 
 .. |author| replace:: Pascal Mayer <typo3@simple.ch>
-.. |extension_key| replace:: videoce
-.. |extension_name| replace:: Video CE
+.. |extensionkey| replace:: videoce
+.. |extensionname| replace:: Video CE
 .. |typo3| image:: Images/Typo3.png
 .. |time| date:: %m-%d-%Y %H:%M
+.. |ytpatter| replace:: #^(?:https?://|//)?(?:www\.|m\.)?(?:youtu\.be/|youtube\.com(?:/embed/|/v/|/watch\?v=|/watch\?.+&v=))([\w-]{11})#x
 
 ..  Custom roles
 	...................................................
