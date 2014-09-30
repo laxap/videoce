@@ -5,7 +5,7 @@
 	* optional: soft carriage return preferred.
 
 .. Includes roles, substitutions, ...
-.. include:: _IncludedDirectives.rst
+.. include:: Includes.txt
 
 
 
@@ -19,13 +19,22 @@ Video Content Element
 :Language: en
 
 
+This document is published under the Open Content License
+
+available from http://www.opencontent.org/opl.shtml
+
+The content of this document is related to TYPO3
+
+\- a GNU/GPL CMS/Framework available from www.typo3.org
+
 
 **Table of Contents**
 
 .. toctree::
-	:maxdepth: 3
+   :maxdepth: 5
 
-    Introduction/Index
-	UsersManual/Index
-	Administration/Index
-	Configuration/Index
+   Introduction/Index
+   UsersManual/Index
+   Administration/Index
+   Configuration/Index
+

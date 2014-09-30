@@ -3,21 +3,21 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: ../_IncludedDirectives.rst
+.. include:: ../Includes.txt
 .. include:: Images.txt
 
 
-============
 Introduction
 ============
 
 
 What does it do?
-================
+----------------
 
 Another content element for displaying Youtube and Vimeo videos.
 
 **Features**
+
 - Supports a lot of youtube link formats
 
 - Retrieves Vimeo video data via API call
@@ -26,13 +26,17 @@ Another content element for displaying Youtube and Vimeo videos.
 
 
 Screenshot
-==========
+----------
 
-|img-screenshot|
 Three columns with videos.
 
-|img-screenshot2|
+|img-screenshot|
+
 Bootstrap optimized. Class attributes may be changed.
 
+|img-screenshot2|
+
+Click enlarge or link to youtube/vimeo website.
+
 |img-screenshot3|
-Click enlarge.
+

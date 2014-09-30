@@ -3,19 +3,18 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: ../_IncludedDirectives.rst
+.. include:: ../Includes.txt
 .. include:: Images.txt
 
 
-============
 Users manual
 ============
 
 **Insert a video content element on a page.**
 
-|img-insertvideo|
-
 The new video element is shown in the special elements group.
+
+|img-insertvideo|
 
 Add the video links and optional captions. Multiple youtube link formats are supported. Informations about vimeo video links will be retrieved via vimeo api call.
 

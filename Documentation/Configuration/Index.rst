@@ -3,16 +3,15 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: ../_IncludedDirectives.rst
+.. include:: ../Includes.txt
 
 
-=============
 Configuration
 =============
 
 
 General settings
-================
+----------------
 
 [tsref:tt_content.videoce\_videocontent.20.settings]
 
@@ -191,7 +190,7 @@ General settings
 
 
 YouTube settings
-================
+----------------
 
 [tsref:tt_content.videoce\_videocontent.20.settings.videoTypes.youtube]
 
@@ -356,7 +355,7 @@ YouTube settings
 
 
 Vimeo settings
-==============
+--------------
 
 [tsref:tt_content.videoce\_videocontent.20.settings.videoTypes.vimeo]
 
