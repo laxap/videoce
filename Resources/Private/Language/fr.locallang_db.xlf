@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="fr" datatype="plaintext" original="messages" date="2014-01-01T18:00:00Z" product-name="videoce">
+		<header/>
+		<body>
+			<trans-unit id="video.ctype.title" xml:space="preserve">
+				<source>Vidéo</source>
+			</trans-unit>
+			<trans-unit id="video.ctype.description" xml:space="preserve">
+				<source>Vidéos Youtube, Vimeo ou Dailymotion</source>
+			</trans-unit>
+
+			<trans-unit id="video.links" xml:space="preserve">
+				<source>Liens des vidéos (un par ligne, Youtube, Vimeo ou Dailymotion)</source>
+			</trans-unit>
+			<trans-unit id="video.caption" xml:space="preserve">
+				<source>Titres des vidéos (un par ligne)</source>
+			</trans-unit>
+
+			<trans-unit id="video.pal.widthheight" xml:space="preserve">
+				<source>Tailles des vidéos</source>
+			</trans-unit>
+			<trans-unit id="video.width" xml:space="preserve">
+				<source>Largeur</source>
+			</trans-unit>
+			<trans-unit id="video.height" xml:space="preserve">
+				<source>Hauteur</source>
+			</trans-unit>
+			<trans-unit id="video.clickenlarge" xml:space="preserve">
+				<source>Agrandissement lors du clic</source>
+			</trans-unit>
+
+			<trans-unit id="video.position" xml:space="preserve">
+				<source>Position des titres</source>
+			</trans-unit>
+
+            <trans-unit id="video.pal.rowcol" xml:space="preserve">
+				<source>Mise en page</source>
+			</trans-unit>
+            <trans-unit id="video.rows" xml:space="preserve">
+				<source>Lignes</source>
+			</trans-unit>
+            <trans-unit id="video.cols" xml:space="preserve">
+				<source>Colonnes</source>
+			</trans-unit>
+        </body>
+	</file>
+</xliff>
