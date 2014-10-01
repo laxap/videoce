@@ -78,6 +78,35 @@ tt_content.videoce_videocontent.20 {
                     }
                 }
             }
+
+            dailymotion {
+    
+                class = Simplicity\Videoce\Domain\Model\DailymotionVideo
+
+                config {
+                    pattern = #^(?:https?://)?(?:www\.)?(?:dailymotion\.com/video/)#x
+                  
+                    api {
+                        url =  https://api.dailymotion.com/video/
+                    }
+
+                    # embed config
+                    embed {
+                        # url for embedding the video
+                        url = http://www.dailymotion.com/embed/video/
+                        
+                        # iframe attribs
+                        iframeAttrib = frameborder="0"
+                    }
+                    # show in lightbox
+                    lightbox {
+                        enabled = 1
+                        url = http://www.dailymotion.com/embed/video/
+                        urlParam = ?autoplay=true&iframe=true
+                    }
+                }
+            }
+
         }
 
         rowClass = row
