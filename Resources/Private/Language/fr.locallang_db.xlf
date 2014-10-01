@@ -11,7 +11,6 @@
                 <source>Videos from Youtube or Vimeo</source>
                 <target state="translated">Vidéos Youtube, Vimeo ou Dailymotion</target>
             </trans-unit>
-
             <trans-unit id="video.links" xml:space="preserve" approved="yes">
                 <source>Video Links (one per line, Youtube or Vimeo)</source>
                 <target state="translated">Liens des vidéos (un par ligne, Youtube, Vimeo ou Dailymotion)</target>
@@ -20,7 +19,6 @@
                 <source>Video Captions (one per line)</source>
                 <target state="translated">Titres des vidéos (un par ligne)</target>
             </trans-unit>
-
             <trans-unit id="video.pal.widthheight" xml:space="preserve" approved="yes">
                 <source>Width and height of video</source>
 		<target state="translated">Tailles des vidéos</target>
@@ -37,12 +35,10 @@
 		<source>Click-enlarge</source>
 		<target state="translated">Agrandissement lors du clic</target>
             </trans-unit>
-
             <trans-unit id="video.position" xml:space="preserve" approved="yes">
 		<source>Position of caption</source>
 		<target state="translated">Position des titres</target>
             </trans-unit>
-
             <trans-unit id="video.pal.rowcol" xml:space="preserve" approved="yes">
 		<source>Layout</source>
 		<target state="translated">Mise en forme</target>
