@@ -49,8 +49,8 @@ class DailymotionVideo extends ExternalVideo {
         $videoIdPart = preg_replace($this->config['pattern'], '', $link);
 
         // only by api!
-        if ($this->retrieveVideoData($link)) {
-            if (isset($this->videoData['video_id'])) {
+        if ($this->retrieveVideoData($videoIdPart)) {
+            if (isset($this->videoData['id'])) {
                 $this->videoId = $this->videoData['id'];
                 return true;
             }
