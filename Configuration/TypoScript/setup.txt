@@ -90,6 +90,12 @@ tt_content.videoce_videocontent.20 {
                         url =  https://api.dailymotion.com/video/
                     }
 
+                    # normal link dailymotion website
+                    link {
+                        url = http://www.dailymotion.com/video/
+                        urlParam =
+                    }
+
                     # embed config
                     embed {
                         # url for embedding the video
