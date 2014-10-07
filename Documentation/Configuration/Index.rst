@@ -172,7 +172,7 @@ General settings
          Use addJsFooterFile() instead of addJsFooterLibrary to include the files.
 
    :Default:
-         1
+         0
 
 
  - :Property:
@@ -410,7 +410,7 @@ Additional and different settings for vimeo.
          string
 
    :Description:
-         Used for displaying link to youtube website.
+         Used for displaying link to vimeo website.
 
    :Default:
          https://vimeo.com/

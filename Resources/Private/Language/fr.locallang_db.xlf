@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.0">
+    <file source-language="en" target-language="fr" datatype="plaintext" original="messages" date="2014-01-01T18:00:00Z" product-name="videoce">
+        <header/>
+        <body>
+            <trans-unit id="video.ctype.title" xml:space="preserve" approved="yes">
+                <source>Video</source>
+                <target state="translated">Vidéo</target>
+            </trans-unit>
+            <trans-unit id="video.ctype.description" xml:space="preserve" approved="yes">
+                <source>Videos from Youtube or Vimeo</source>
+                <target state="translated">Vidéos Youtube, Vimeo ou Dailymotion</target>
+            </trans-unit>
+            <trans-unit id="video.links" xml:space="preserve" approved="yes">
+                <source>Video Links (one per line, Youtube or Vimeo)</source>
+                <target state="translated">Liens des vidéos (un par ligne, Youtube, Vimeo ou Dailymotion)</target>
+            </trans-unit>
+            <trans-unit id="video.caption" xml:space="preserve" approved="yes">
+                <source>Video Captions (one per line)</source>
+                <target state="translated">Titres des vidéos (un par ligne)</target>
+            </trans-unit>
+            <trans-unit id="video.pal.widthheight" xml:space="preserve" approved="yes">
+                <source>Width and height of video</source>
+		<target state="translated">Tailles des vidéos</target>
+            </trans-unit>
+            <trans-unit id="video.width" xml:space="preserve" approved="yes">
+                <source>Width</source>
+                <target state="translated">Largeur</target>
+            </trans-unit>
+            <trans-unit id="video.height" xml:space="preserve" approved="yes">
+                <source>Height</source>
+                <target state="translated">Hauteur</target>
+            </trans-unit>
+            <trans-unit id="video.clickenlarge" xml:space="preserve" approved="yes">
+		<source>Click-enlarge</source>
+		<target state="translated">Agrandissement lors du clic</target>
+            </trans-unit>
+            <trans-unit id="video.position" xml:space="preserve" approved="yes">
+		<source>Position of caption</source>
+		<target state="translated">Position des titres</target>
+            </trans-unit>
+            <trans-unit id="video.pal.rowcol" xml:space="preserve" approved="yes">
+		<source>Layout</source>
+		<target state="translated">Mise en forme</target>
+            </trans-unit>
+            <trans-unit id="video.rows" xml:space="preserve" approved="yes">
+                <source>Rows</source>
+                <target state="translated">Lignes</target>
+            </trans-unit>
+            <trans-unit id="video.cols" xml:space="preserve" approved="yes">
+		<source>Columns</source>
+		<target state="translated">Colonnes</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
