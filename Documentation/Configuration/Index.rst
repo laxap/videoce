@@ -217,10 +217,10 @@ YouTube settings
          string
 
    :Description:
-         Domain model class. Extends Model\ExternalVideo.
+         Domain model class. Extends Model\\ExternalVideo.
 
    :Default:
-         Simplicity\Videoce\Domain\Model\YoutubeVideo
+         Simplicity\\Videoce\\Domain\\Model\\YoutubeVideo
 
 
  - :Property:
@@ -384,10 +384,10 @@ Additional and different settings for vimeo.
          string
 
    :Description:
-         Domain model class. Extends Model\ExternalVideo.
+         Domain model class. Extends Model\\ExternalVideo.
 
    :Default:
-         Simplicity\Videoce\Domain\Model\VimeoVideo
+         Simplicity\\Videoce\\Domain\\Model\\VimeoVideo
 
 
  - :Property:
@@ -400,7 +400,7 @@ Additional and different settings for vimeo.
          Pattern used to detect vimeo video type
 
    :Default:
-         #^(?:https?://)?(?:www\.)?(?:vimeo\.com)#x
+         #^(?:https?://)?(?:www\\.)?(?:vimeo\\.com)#x
 
 
  - :Property:
