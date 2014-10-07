@@ -25,8 +25,8 @@ Another content element for displaying Youtube and Vimeo videos.
 - Simple usage
 
 
-Screenshot
-----------
+Screenshots
+-----------
 
 Three columns with videos.
 
