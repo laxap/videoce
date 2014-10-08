@@ -479,3 +479,106 @@ Additional and different settings for vimeo.
 
    :Default:
          http://vimeo.com/api/oembed.json?url=
+
+
+
+
+Dailymotion settings
+--------------
+
+[tsref:tt_content.videoce\_videocontent.20.settings.videoTypes.dailymotion]
+
+Additional and different settings for vimeo.
+
+.. t3-field-list-table::
+ :header-rows: 1
+
+ - :Property:
+         Property:
+
+   :Data type:
+         Data type:
+
+   :Description:
+         Description:
+
+   :Default:
+         Default:
+
+
+ - :Property:
+         class
+
+   :Data type:
+         string
+
+   :Description:
+         Domain model class. Extends Model\\ExternalVideo.
+
+   :Default:
+         Simplicity\\Videoce\\Domain\\Model\\DailymotionVideo
+
+
+ - :Property:
+         config.pattern
+
+   :Data type:
+         string
+
+   :Description:
+         Pattern used to detect vimeo video type
+
+   :Default:
+         #^(?:https?://)?(?:www\\.)?(?:dailymotion\\.com/video/)#x
+
+
+ - :Property:
+         config.link.url
+
+   :Data type:
+         string
+
+   :Description:
+         Used for displaying link to Dailymotion website.
+
+   :Default:
+         http://www.dailymotion.com/video/
+
+
+ - :Property:
+         config.embed.url
+
+   :Data type:
+         string
+
+   :Description:
+         Url used to embed the video
+
+   :Default:
+         http://www.dailymotion.com/embed/video/
+
+
+ - :Property:
+         config.lightbox.url
+
+   :Data type:
+         string
+
+   :Description:
+         Url for lightbox.
+
+   :Default:
+         http://www.dailymotion.com/embed/video/
+
+ 
+ - :Property:
+         config.api.url
+
+   :Data type:
+         string
+
+   :Description:
+        URL used for api calls.
+
+   :Default:
+         https://api.dailymotion.com/video/
