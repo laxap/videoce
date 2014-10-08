@@ -526,7 +526,7 @@ Additional and different settings for vimeo.
          string
 
    :Description:
-         Pattern used to detect vimeo video type
+         Pattern used to detect dailymotion video type
 
    :Default:
          #^(?:https?://)?(?:www\\.)?(?:dailymotion\\.com/video/)#x
