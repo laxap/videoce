@@ -484,7 +484,7 @@ Additional and different settings for vimeo.
 
 
 Dailymotion settings
---------------
+--------------------
 
 [tsref:tt_content.videoce\_videocontent.20.settings.videoTypes.dailymotion]
 
