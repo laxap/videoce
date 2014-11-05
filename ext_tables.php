@@ -18,7 +18,7 @@ $pluginIcon = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_E
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'Simplicity.' . $_EXTKEY,
 	'VideoContent',
-	'Video (Youtube, Vimeo)',
+	'Video (Youtube, Vimeo, Dailymotion)',
 	$pluginIcon
 );
 

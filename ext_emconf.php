@@ -6,13 +6,13 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'Video Content Element',
-	'description' => 'Another content element for Youtube and Vimeo videos.',
+	'description' => 'Another content element for Youtube, Vimeo and Dailymotion videos.',
 	'category' => 'misc',
 	'author' => 'Pascal Mayer',
 	'author_email' => 'typo3@simple.ch',
 	'author_company' => 'simplicity gmbh',
 	'shy' => '',
-	'version' => '0.6.4-dev',
+	'version' => '0.6.4',
 	'priority' => '',
 	'module' => '',
 	'state' => 'beta',
