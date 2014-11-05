@@ -20,7 +20,7 @@ Another content element for displaying Youtube and Vimeo videos.
 
 - Supports a lot of youtube link formats
 
-- Retrieves Vimeo video data via API call
+- Retrieves Vimeo and Dailymotion video data via API call
 
 - Simple usage
 
@@ -36,7 +36,7 @@ Bootstrap optimized. Class attributes may be changed.
 
 |img-screenshot2|
 
-Click enlarge or link to youtube/vimeo website.
+Click enlarge or link to youtube/vimeo/dailymotion website.
 
 |img-screenshot3|
 
