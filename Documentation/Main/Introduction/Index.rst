@@ -3,7 +3,7 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: ../Includes.txt
+.. include:: ../../Includes.txt
 .. include:: Images.txt
 
 
@@ -40,3 +40,8 @@ Click enlarge or link to youtube/vimeo/dailymotion website.
 
 |img-screenshot3|
 
+
+Credits
+-------
+
+Special thank goes to Sébastien Convers for the integration of dailymotion support and its documentation.

@@ -3,7 +3,7 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. include:: ../Includes.txt
+.. include:: ../../Includes.txt
 
 
 Configuration
@@ -220,7 +220,7 @@ YouTube settings
          Domain model class. Extends Model\\ExternalVideo.
 
    :Default:
-         Simplicity\\Videoce\\Domain\\Model\\YoutubeVideo
+         Laxap\\Videoce\\Domain\\Model\\YoutubeVideo
 
 
  - :Property:
@@ -387,7 +387,7 @@ Additional and different settings for vimeo.
          Domain model class. Extends Model\\ExternalVideo.
 
    :Default:
-         Simplicity\\Videoce\\Domain\\Model\\VimeoVideo
+         Laxap\\Videoce\\Domain\\Model\\VimeoVideo
 
 
  - :Property:
@@ -516,7 +516,7 @@ Additional and different settings for vimeo.
          Domain model class. Extends Model\\ExternalVideo.
 
    :Default:
-         Simplicity\\Videoce\\Domain\\Model\\DailymotionVideo
+         Laxap\\Videoce\\Domain\\Model\\DailymotionVideo
 
 
  - :Property:

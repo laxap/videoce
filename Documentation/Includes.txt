@@ -3,10 +3,10 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. This is 'Includes.txt'. It is included at the very top of each and
-   every ReST source file in this documentation project (= manual).
+.. |author| replace:: Pascal Mayer <typo3@bsdist.ch>
 
 .. |ytpatter| replace:: #^(?:https?://\|//)?(?:www\\.|m\\.)?(?:youtu\\.be/\|youtube\\.com(?:/embed/\|/v/\|/watch\\?v=|/watch\\?.+&v=))([\\w-]{11})#x
+
 
 .. ==================================================
 .. DEFINE SOME TEXTROLES
