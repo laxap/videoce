@@ -1,10 +1,10 @@
 <?php
-namespace Simplicity\Videoce\Domain\Model;
+namespace Laxap\Videoce\Domain\Model;
 
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Pascal Mayer <typo3(a)simple.ch>, simplicity gmbh
+ *  (c) 2013 Pascal Mayer <typo3(a)bsdist.ch>
  *
  *  All rights reserved
  *

@@ -13,7 +13,7 @@ if ( strlen($_EXTCONF) ) {
 //
 // Configure plugin as content element
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Simplicity.' . $_EXTKEY,
+	'Laxap.' . $_EXTKEY,
 	'VideoContent',
 	array('VideoContent' => 'show',),
 	// non-cacheable actions

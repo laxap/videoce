@@ -16,7 +16,7 @@ if ( strlen($_EXTCONF) ) {
 // register plugin, with icon
 $pluginIcon = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/plugin_videocontent.png';
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	'Simplicity.' . $_EXTKEY,
+	'Laxap.' . $_EXTKEY,
 	'VideoContent',
 	'Video (Youtube, Vimeo, Dailymotion)',
 	$pluginIcon

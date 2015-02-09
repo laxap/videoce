@@ -1,10 +1,10 @@
 <?php
-namespace Simplicity\Videoce\Controller;
+namespace Laxap\Videoce\Controller;
 
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Pascal Mayer <typo3(a)simple.ch>, simplicity gmbh
+ *  (c) 2013 Pascal Mayer <typo3(a)bsdist.ch>
  *
  *  All rights reserved
  *
@@ -133,11 +133,11 @@ class VideoContentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
 		$width = $width?$width:$this->settings['default']['width'];
 		$height = $height?$height:$this->settings['default']['height'];
 
-		/** @var \Simplicity\Videoce\Domain\Model\ExternalVideo $videoObj */
+		/** @var \Laxap\Videoce\Domain\Model\ExternalVideo $videoObj */
 		$videoObjList = array();
 		foreach ( $videoLinkArray as $index => $videoLink ) {
 			// get type
-			$videoType = \Simplicity\Videoce\Domain\Model\ExternalVideo::getVideoType($videoLink, $this->settings['videoTypes']);
+			$videoType = \Laxap\Videoce\Domain\Model\ExternalVideo::getVideoType($videoLink, $this->settings['videoTypes']);
 
 			if ( $videoType !== false && $this->settings['videoTypes'][$videoType]['class'] ) {
 				// get object based on type class

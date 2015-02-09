@@ -1,11 +1,10 @@
 <?php
+namespace Laxap\Videoce\Domain\Model;
 
-namespace Simplicity\Videoce\Domain\Model;
-
-/* * *************************************************************
+/***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Pascal Mayer <typo3(a)simple.ch>, simplicity gmbh
+ *  (c) 2014 Sébastien Convers
  *
  *  All rights reserved
  *
@@ -24,7 +23,7 @@ namespace Simplicity\Videoce\Domain\Model;
  *  GNU General Public License for more details.
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
- * ************************************************************* */
+ ************************************************************** */
 
 /**
  * @package Videoce
