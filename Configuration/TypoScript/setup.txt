@@ -12,7 +12,7 @@ tt_content.videoce_videocontent.20 {
 
         videoTypes {
             youtube {
-                class = Simplicity\Videoce\Domain\Model\YoutubeVideo
+                class = Laxap\Videoce\Domain\Model\YoutubeVideo
 
                 config {
                     pattern = #^(?:https?://|//)?(?:www\.|m\.)?(?:youtu\.be/|youtube\.com(?:/embed/|/v/|/watch\?v=|/watch\?.+&v=))([\w-]{11})#x
@@ -45,7 +45,7 @@ tt_content.videoce_videocontent.20 {
             }
 
             vimeo {
-                class = Simplicity\Videoce\Domain\Model\VimeoVideo
+                class = Laxap\Videoce\Domain\Model\VimeoVideo
 
                 config {
                     pattern = #^(?:https?://)?(?:www\.)?(?:vimeo\.com)#x
@@ -55,22 +55,17 @@ tt_content.videoce_videocontent.20 {
                         url = http://vimeo.com/api/oembed.json?url=
                     }
 
-                    # normal link vimeo website
                     link {
                         url = https://vimeo.com/
                         urlParam =
                     }
-                    # embed config
                     embed {
-                        # url for embedding the video
                         url = //player.vimeo.com/video/
                         # see http://developer.vimeo.com/player/embedding
                         urlParam = ?portrait=0&byline=0
                         urlParamPlaylist =
-                        # iframe attribs
                         iframeAttrib = frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
                     }
-                    # show in lightbox
                     lightbox {
                         enabled = 1
                         url = https://vimeo.com/
@@ -81,7 +76,7 @@ tt_content.videoce_videocontent.20 {
 
             dailymotion {
     
-                class = Simplicity\Videoce\Domain\Model\DailymotionVideo
+                class = Laxap\Videoce\Domain\Model\DailymotionVideo
 
                 config {
                     pattern = #^(?:https?://)?(?:www\.)?(?:dailymotion\.com/video/)#x
@@ -89,22 +84,14 @@ tt_content.videoce_videocontent.20 {
                     api {
                         url =  https://api.dailymotion.com/video/
                     }
-
-                    # normal link dailymotion website
                     link {
                         url = http://www.dailymotion.com/video/
                         urlParam =
                     }
-
-                    # embed config
                     embed {
-                        # url for embedding the video
                         url = http://www.dailymotion.com/embed/video/
-                        
-                        # iframe attribs
                         iframeAttrib = frameborder="0"
                     }
-                    # show in lightbox
                     lightbox {
                         enabled = 1
                         url = http://www.dailymotion.com/embed/video/
@@ -113,6 +100,28 @@ tt_content.videoce_videocontent.20 {
                 }
             }
 
+            metacafe {
+                class = Laxap\Videoce\Domain\Model\MetacafeVideo
+                config {
+                    pattern = #^(?:https?://)?(?:www\.)?(?:metacafe\.com/watch/)([\w]{8})#x
+                    link {
+                        url = https://www.metacafe.com/watch/
+                        urlParam =
+                    }
+                    embed {
+                        url = //www.metacafe.com/embed/
+                        urlParam =
+                        urlParamPlaylist =
+                        iframeAttrib = frameborder="0" allowfullscreen
+                    }
+                    # (not tested)
+                    lightbox {
+                        enabled = 0
+                        url = https://www.metacafe.com/embed/
+                        urlParam = &width=600&height=338
+                    }
+                }
+            }
         }
 
         rowClass = row
