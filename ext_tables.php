@@ -28,22 +28,79 @@ $pluginSignature = str_replace('_','',$_EXTKEY) . '_videocontent';
 // show an icon in the page view
 \TYPO3\CMS\Backend\Sprite\SpriteManager::addTcaTypeIcon('tt_content', $pluginSignature, $pluginIcon);
 
+
+// Redefine non-existing fields in TYPO3 >= 7.2
+if ( TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version) >= 7002000 ) {
+
+	$tempColumn = array(
+		'image_link' => array (
+			'exclude' => 0,
+			'label' => 'LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:tt_content.image_link',
+			'config' => array (
+				'type' => 'text',
+				'cold' => 30,
+				'rows' => 3,
+			)
+		),
+		'imagecaption' => array (
+			'exclude' => 0,
+			'label' => 'LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:tt_content.imagecaption',
+			'config' => array (
+				'type' => 'text',
+				'cold' => 30,
+				'rows' => 3,
+				'softref' => 'typolink_tag,images,email[subst],url'
+			)
+		),
+		'imagecaption_position' => array(
+			'label' => 'LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:tt_content.imagecaption_position',
+			'config' => array(
+				'type' => 'select',
+				'items' => array(
+					array(
+						'LLL:EXT:lang/locallang_general.xlf:LGL.default_value',
+						''
+					),
+					array(
+						'LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:tt_content.imagecaption_position.I.1',
+						'center'
+					),
+					array(
+						'LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:tt_content.imagecaption_position.I.2',
+						'right'
+					),
+					array(
+						'LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:tt_content.imagecaption_position.I.3',
+						'left'
+					)
+				),
+				'default' => ''
+			)
+		),
+	);
+
+	// Add field to tt_content
+	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumn, 1);
+}
+
+
 // define palettes
-$TCA['tt_content']['palettes']['tx_videoce_size']['showitem'] = 'imagewidth;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.width,imageheight;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.height,image_zoom;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.clickenlarge';
-$TCA['tt_content']['palettes']['tx_videoce_size']['canNotCollapse'] = '1';
-$TCA['tt_content']['palettes']['tx_videoce_layout']['showitem'] = 'imagecols;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.cols,image_noRows;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.rows';
-$TCA['tt_content']['palettes']['tx_videoce_layout']['canNotCollapse'] = '1';
+$GLOBALS['TCA']['tt_content']['palettes']['tx_videoce_size']['showitem'] = 'imagewidth;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.width,imageheight;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.height,image_zoom;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.clickenlarge';
+$GLOBALS['TCA']['tt_content']['palettes']['tx_videoce_size']['canNotCollapse'] = '1';
+$GLOBALS['TCA']['tt_content']['palettes']['tx_videoce_layout']['showitem'] = 'imagecols;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.cols,image_noRows;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.rows';
+$GLOBALS['TCA']['tt_content']['palettes']['tx_videoce_layout']['canNotCollapse'] = '1';
 
 // define used fields
-$TCA['tt_content']['types'][$pluginSignature]['showitem'] = '
+
+$GLOBALS['TCA']['tt_content']['types'][$pluginSignature]['showitem'] = '
 				--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.general;general,
 				--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.header;header,
 			--div--;Videos,
 				image_link,imagecaption,
-                        --div--;LLL:EXT:cms/locallang_ttc.xml:tabs.appearance,
-                                imagecaption_position,
-                                --palette--;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.pal.widthheight;tx_videoce_size,
-                                --palette--;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.pal.rowcol;tx_videoce_layout,
+            --div--;LLL:EXT:cms/locallang_ttc.xml:tabs.appearance,
+				imagecaption_position,
+				--palette--;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.pal.widthheight;tx_videoce_size,
+				--palette--;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.pal.rowcol;tx_videoce_layout,
 				--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.frames;frames,
 				--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.textlayout;textlayout,
 			--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,

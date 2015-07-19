@@ -30,7 +30,7 @@ namespace Laxap\Videoce\Domain\Model;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class YouTubeVideo extends ExternalVideo  {
+class YoutubeVideo extends ExternalVideo  {
 
 	/**
 	 * @var string
