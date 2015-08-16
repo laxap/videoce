@@ -31,7 +31,6 @@ $pluginSignature = str_replace('_','',$_EXTKEY) . '_videocontent';
 
 // Redefine non-existing fields in TYPO3 >= 7.2
 if ( TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version) >= 7002000 ) {
-
 	$tempColumn = array(
 		'image_link' => array (
 			'exclude' => 0,
@@ -52,7 +51,10 @@ if ( TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(
 				'softref' => 'typolink_tag,images,email[subst],url'
 			)
 		),
-		'imagecaption_position' => array(
+	);
+
+	if ( TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version) < 7004000 ) {
+		$tempColumn['imagecaption_position'] = array(
 			'label' => 'LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:tt_content.imagecaption_position',
 			'config' => array(
 				'type' => 'select',
@@ -76,8 +78,8 @@ if ( TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(
 				),
 				'default' => ''
 			)
-		),
-	);
+		);
+	}
 
 	// Add field to tt_content
 	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumn, 1);
@@ -91,8 +93,25 @@ $GLOBALS['TCA']['tt_content']['palettes']['tx_videoce_layout']['showitem'] = 'im
 $GLOBALS['TCA']['tt_content']['palettes']['tx_videoce_layout']['canNotCollapse'] = '1';
 
 // define used fields
-
-$GLOBALS['TCA']['tt_content']['types'][$pluginSignature]['showitem'] = '
+if ( TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version) >= 7004000 ) {
+	// EXT:frontend vs EXT:cms
+	$GLOBALS['TCA']['tt_content']['types'][$pluginSignature]['showitem'] = '
+				--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
+				--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.header;header,
+			--div--;Videos,
+				image_link,imagecaption,
+            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+				imagecaption_position,
+				--palette--;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.pal.widthheight;tx_videoce_size,
+				--palette--;LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:video.pal.rowcol;tx_videoce_layout,
+				--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
+				--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.textlayout;textlayout,
+			--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
+				--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,
+				--palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
+			--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.extended';
+} else {
+	$GLOBALS['TCA']['tt_content']['types'][$pluginSignature]['showitem'] = '
 				--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.general;general,
 				--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.header;header,
 			--div--;Videos,
@@ -107,5 +126,6 @@ $GLOBALS['TCA']['tt_content']['types'][$pluginSignature]['showitem'] = '
 				--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.visibility;visibility,
 				--palette--;LLL:EXT:cms/locallang_ttc.xml:palette.access;access,
 			--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.extended';
+}
 
 ?>
