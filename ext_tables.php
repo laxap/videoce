@@ -58,6 +58,7 @@ if ( TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(
 			'label' => 'LLL:EXT:videoce/Resources/Private/Language/locallang_db.xlf:tt_content.imagecaption_position',
 			'config' => array(
 				'type' => 'select',
+				'renderType' => 'selectSingle',
 				'items' => array(
 					array(
 						'LLL:EXT:lang/locallang_general.xlf:LGL.default_value',
