@@ -1,19 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
+<f:section name="Header" />
+<f:section name="Main">
 
-<f:section name="main">
     <f:if condition="{videos}">
         <f:if condition="{colClass}">
             <f:then>
                 <f:if condition="{data.image_noRows}">
                     <f:then>
                         <div class="{rowClass}">
-                        <f:for each="{videos}" as="videoRow" key="colIndex" >
-                            <f:for each="{videoRow}" as="video" key="index" >
-                                <div class="{colClass}">
-                                    <div class="video-wrapper"><f:render section="videoItem" arguments="{video:video, data:data, captionPosition:captionPosition, extLinkIcon:extLinkIcon}" /></div>
-                                </div>
+                            <f:for each="{videos}" as="videoRow" key="colIndex" >
+                                <f:for each="{videoRow}" as="video" key="index" >
+                                    <div class="{colClass}">
+                                        <div class="video-wrapper"><f:render section="videoItem" arguments="{video:video, data:data, clickEnlargeLinkAttribute:clickEnlargeLinkAttribute, extLinkIcon:extLinkIcon}" /></div>
+                                    </div>
+                                </f:for>
                             </f:for>
-                        </f:for>
                         </div>
                     </f:then>
                     <f:else>
@@ -21,7 +23,7 @@
                             <div class="{rowClass}">
                                 <f:for each="{videoRow}" as="video" key="index" >
                                     <div class="{colClass}">
-                                        <div class="video-wrapper"><f:render section="videoItem" arguments="{video:video, data:data, captionPosition:captionPosition, extLinkIcon:extLinkIcon}" /></div>
+                                        <div class="video-wrapper"><f:render section="videoItem" arguments="{video:video, data:data, clickEnlargeLinkAttribute:clickEnlargeLinkAttribute, extLinkIcon:extLinkIcon}" /></div>
                                     </div>
                                 </f:for>
                             </div>
@@ -30,7 +32,7 @@
                 </f:if>
             </f:then>
             <f:else>
-                <f:for each="{videos}" as="video" key="index" ><div class="video-wrapper"><f:render section="videoItem" arguments="{video:video, data:data, captionPosition:captionPosition, extLinkIcon:extLinkIcon}" /></div></f:for>
+                <f:for each="{videos}" as="video" key="index" ><div class="video-wrapper"><f:render section="videoItem" arguments="{video:video, data:data, clickEnlargeLinkAttribute:clickEnlargeLinkAttribute, extLinkIcon:extLinkIcon}" /></div></f:for>
             </f:else>
         </f:if>
     </f:if>
@@ -39,10 +41,11 @@
 <f:section name="videoItem">
     <f:format.raw>{video.embedCode}</f:format.raw>
     <f:if condition="{data.image_zoom}">
-        <span class="videoce-zoom"><a rel="{settings.clickEnlargeATagRel}[c{data.uid}]" href="{video.linkUrl}"><i class="{extLinkIcon}"></i></a></span>
+        <span class="videoce-zoom"><a {clickEnlargeLinkAttribute} href="{video.linkUrl}"><i class="{extLinkIcon}"></i></a></span>
     </f:if>
     <f:if condition="{video.caption} == ' '">
-        <f:then><p class="caption-{captionPosition}">&nbsp;</p></f:then>
-        <f:else><f:if condition="{video.caption}"><p class="caption-{captionPosition}">{video.caption}</p></f:if></f:else>
+        <f:then><p class="caption">&nbsp;</p></f:then>
+        <f:else><f:if condition="{video.caption}"><p class="caption">{video.caption}</p></f:if></f:else>
     </f:if>
 </f:section>
+</html>
