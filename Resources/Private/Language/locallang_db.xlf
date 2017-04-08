@@ -9,6 +9,9 @@
 			<trans-unit id="video.ctype.description" xml:space="preserve">
 				<source>Videos from Youtube or Vimeo</source>
 			</trans-unit>
+			<trans-unit id="plugin.videoce_videocontent" xml:space="preserve">
+				<source>Video (Youtube, Vimeo, Dailymotion)</source>
+			</trans-unit>
 
 			<trans-unit id="video.links" xml:space="preserve">
 				<source>Video Links (one per line, Youtube or Vimeo)</source>
@@ -30,10 +33,6 @@
 				<source>Click-enlarge</source>
 			</trans-unit>
 
-			<trans-unit id="video.position" xml:space="preserve">
-				<source>Position of caption</source>
-			</trans-unit>
-
             <trans-unit id="video.pal.rowcol" xml:space="preserve">
 				<source>Layout</source>
 			</trans-unit>
@@ -42,25 +41,6 @@
 			</trans-unit>
             <trans-unit id="video.cols" xml:space="preserve">
 				<source>Columns</source>
-			</trans-unit>
-
-			<trans-unit id="tt_content.image_link" xml:space="preserve">
-				<source>Link:</source>
-			</trans-unit>
-			<trans-unit id="tt_content.imagecaption" xml:space="preserve">
-				<source>Caption:</source>
-			</trans-unit>
-			<trans-unit id="tt_content.imagecaption_position" xml:space="preserve">
-				<source>Align:</source>
-			</trans-unit>
-			<trans-unit id="tt_content.imagecaption_position.I.1" xml:space="preserve">
-				<source>Center</source>
-			</trans-unit>
-			<trans-unit id="tt_content.imagecaption_position.I.2" xml:space="preserve">
-				<source>Right</source>
-			</trans-unit>
-			<trans-unit id="tt_content.imagecaption_position.I.3" xml:space="preserve">
-				<source>Left</source>
 			</trans-unit>
         </body>
 	</file>
