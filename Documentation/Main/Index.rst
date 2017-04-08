@@ -31,3 +31,4 @@ The content of this document is related to TYPO3
    UsersManual/Index
    Administration/Index
    Configuration/Index
+   Upgrade/Index
