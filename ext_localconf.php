@@ -1,28 +1,25 @@
 <?php
-if (!defined ('TYPO3_MODE')) die ('Access denied.');
+if (!defined('TYPO3_MODE')) { die('Access denied.'); }
 
-// --- Get extension configuration ---
-$extConf = array();
-if ( strlen($_EXTCONF) ) {
-	$extConf = unserialize($_EXTCONF);
-}
+call_user_func(
+    function ($extKey) {
 
+        // register icons
+        $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+        $iconRegistry->registerIcon(
+            'tx-videocontent-wizard',
+            \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+            ['source' => 'EXT:' . $extKey . '/Resources/Public/Icons/wizard_videocontent.png']
+        );
+        $iconRegistry->registerIcon(
+            'tx-videocontent-plugin',
+            \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+            ['source' => 'EXT:' . $extKey . '/Resources/Public/Icons/plugin_videocontent.png']
+        );
 
-// ------------------------------------
-// Add Video Content Type
-//
-// Configure plugin as content element
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Laxap.' . $_EXTKEY,
-	'VideoContent',
-	array('VideoContent' => 'show',),
-	// non-cacheable actions
-	array(),
-	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+        // default videoce page TSconfig
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:videoce/Configuration/TypoScript/tsconfig.ts">');
+
+    },$_EXTKEY
 );
-
-// ------------------------------------
-// Default videoce page TSconfig
-//
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:videoce/Configuration/TypoScript/tsconfig.ts">');
 ?>
