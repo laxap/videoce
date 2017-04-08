@@ -1,7 +1,6 @@
 {
   "name": "laxap/videoce",
   "type": "typo3-cms-extension",
-  "version": "0.8.2",
   "description": "Another content element for Youtube, Vimeo and Dailymotion videos.",
   "keywords": ["typo3", "TYPO3 CMS", "bootstrap", "video", "youtube", "vimeo"],
   "homepage": "http://www.bsdist.ch",
@@ -12,5 +11,10 @@
       "email": "typo3@bsdist.ch",
       "role": "Developer"
     }
-  ]
+  ],
+  "autoload": {
+    "psr-4": {
+      "Laxap\\Videoce\\": "Classes"
+    }
+  }
 }
