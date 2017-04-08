@@ -2,144 +2,157 @@
 /* ----------------------------------------
  * Video CE settings
  */
-tt_content.videoce_videocontent.20 {
-    settings {
-        default {
-            extLinkIcon = {$plugin.tx_videoce.video.default.extLinkIcon}
-            width = 300
-            height = 150
-        }
+tt_content.videoce_videocontent =< lib.fluidContent
+tt_content.videoce_videocontent {
+    templateName = Show
+    dataProcessing {
+        1 = Laxap\Videoce\DataProcessing\VideoContentProcessor
+        1 {
+            settings {
+                default {
+                    extLinkIcon = {$plugin.tx_videoce.video.default.extLinkIcon}
+                    width = 300
+                    height = 150
+                }
 
-        videoTypes {
-            youtube {
-                class = Laxap\Videoce\Domain\Model\YoutubeVideo
+                videoTypes {
+                    youtube {
+                        class = Laxap\Videoce\Domain\Model\YoutubeVideo
 
-                config {
-                    pattern = #^(?:https?://|//)?(?:www\.|m\.)?(?:youtu\.be/|youtube\.com(?:/embed/|/v/|/watch\?v=|/watch\?.+&v=))([\w-]{11})#x
+                        config {
+                            pattern = #^(?:https?://|//)?(?:www\.|m\.)?(?:youtu\.be/|youtube\.com(?:/embed/|/v/|/watch\?v=|/watch\?.+&v=))([\w-]{11})#x
 
-                    # normal link youtube website
-                    link {
-                        url = https://www.youtube.com/watch?v=
-                        urlParam =
+                            # normal link youtube website
+                            link {
+                                url = https://www.youtube.com/watch?v=
+                                urlParam =
+                            }
+                            # embed config
+                            embed {
+                                # url for embedding the video
+                                url = //www.youtube.com/embed/
+                                #url = //www.youtube-nocookie.com/embed/
+                                # params for embed url
+                                urlParam = ?rel=0
+                                # with subtitles (in specific lang)
+                                #urlParam = ?rel=0&cc_lang_pref=de&cc_load_policy=1
+                                urlParamPlaylist = &playlist=
+                                # iframe attribs
+                                iframeAttrib = frameborder="0" allowfullscreen
+                            }
+                            # show in lightbox
+                            lightbox {
+                                enabled = 1
+                                url = https://www.youtube.com/watch?v=
+                                urlParam = &width=720&height=400
+                            }
+                        }
                     }
-                    # embed config
-                    embed {
-                        # url for embedding the video
-                        url = //www.youtube.com/embed/
-                        #url = //www.youtube-nocookie.com/embed/
-                        # params for embed url
-                        urlParam = ?rel=0
-                        # with subtitles (in specific lang)
-                        #urlParam = ?rel=0&cc_lang_pref=de&cc_load_policy=1
-                        urlParamPlaylist = &playlist=
-                        # iframe attribs
-                        iframeAttrib = frameborder="0" allowfullscreen
+
+                    vimeo {
+                        class = Laxap\Videoce\Domain\Model\VimeoVideo
+
+                        config {
+                            pattern = #^(?:https?://)?(?:www\.)?(?:vimeo\.com)#x
+
+                            respectAspectRatio = height
+                            api {
+                                url = http://vimeo.com/api/oembed.json?url=
+                            }
+
+                            link {
+                                url = https://vimeo.com/
+                                urlParam =
+                            }
+                            embed {
+                                url = //player.vimeo.com/video/
+                                # see http://developer.vimeo.com/player/embedding
+                                urlParam = ?portrait=0&byline=0
+                                urlParamPlaylist =
+                                iframeAttrib = frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+                            }
+                            lightbox {
+                                enabled = 1
+                                url = https://vimeo.com/
+                                urlParam = &width=720&height=400
+                            }
+                        }
                     }
-                    # show in lightbox
-                    lightbox {
-                        enabled = 1
-                        url = https://www.youtube.com/watch?v=
-                        urlParam = &width=720&height=400
+
+                    dailymotion {
+
+                        class = Laxap\Videoce\Domain\Model\DailymotionVideo
+
+                        config {
+                            pattern = #^(?:https?://)?(?:www\.)?(?:dailymotion\.com/video/)#x
+
+                            api {
+                                url =  https://api.dailymotion.com/video/
+                            }
+                            link {
+                                url = http://www.dailymotion.com/video/
+                                urlParam =
+                            }
+                            embed {
+                                url = http://www.dailymotion.com/embed/video/
+                                iframeAttrib = frameborder="0"
+                            }
+                            lightbox {
+                                enabled = 1
+                                url = http://www.dailymotion.com/embed/video/
+                                urlParam = ?autoplay=true&iframe=true
+                            }
+                        }
+                    }
+
+                    metacafe {
+                        class = Laxap\Videoce\Domain\Model\MetacafeVideo
+                        config {
+                            pattern = #^(?:https?://)?(?:www\.)?(?:metacafe\.com/watch/)([\w]{8})#x
+                            link {
+                                url = https://www.metacafe.com/watch/
+                                urlParam =
+                            }
+                            embed {
+                                url = //www.metacafe.com/embed/
+                                urlParam =
+                                urlParamPlaylist =
+                                iframeAttrib = frameborder="0" allowfullscreen
+                            }
+                            # (not tested)
+                            lightbox {
+                                enabled = 0
+                                url = https://www.metacafe.com/embed/
+                                urlParam = &width=600&height=338
+                            }
+                        }
                     }
                 }
-            }
 
-            vimeo {
-                class = Laxap\Videoce\Domain\Model\VimeoVideo
-
-                config {
-                    pattern = #^(?:https?://)?(?:www\.)?(?:vimeo\.com)#x
-
-                    respectAspectRatio = height
-                    api {
-                        url = http://vimeo.com/api/oembed.json?url=
-                    }
-
-                    link {
-                        url = https://vimeo.com/
-                        urlParam =
-                    }
-                    embed {
-                        url = //player.vimeo.com/video/
-                        # see http://developer.vimeo.com/player/embedding
-                        urlParam = ?portrait=0&byline=0
-                        urlParamPlaylist =
-                        iframeAttrib = frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
-                    }
-                    lightbox {
-                        enabled = 1
-                        url = https://vimeo.com/
-                        urlParam = &width=720&height=400
-                    }
+                rowClass = row
+                colClasses {
+                    1 = col-md-12
+                    2 = col-md-6
+                    3 = col-md-4 col-sm-6
+                    4 = col-md-3 col-sm-6
+                    6 = col-md-2 col-sm-4
                 }
-            }
 
-            dailymotion {
-    
-                class = Laxap\Videoce\Domain\Model\DailymotionVideo
+                clickEnlargeLinkAttribute = rel="prettyPhoto"
 
-                config {
-                    pattern = #^(?:https?://)?(?:www\.)?(?:dailymotion\.com/video/)#x
-                  
-                    api {
-                        url =  https://api.dailymotion.com/video/
-                    }
-                    link {
-                        url = http://www.dailymotion.com/video/
-                        urlParam =
-                    }
-                    embed {
-                        url = http://www.dailymotion.com/embed/video/
-                        iframeAttrib = frameborder="0"
-                    }
-                    lightbox {
-                        enabled = 1
-                        url = http://www.dailymotion.com/embed/video/
-                        urlParam = ?autoplay=true&iframe=true
-                    }
+                jsFiles {
+                    jQueryFitvid = typo3conf/ext/videoce/Resources/Public/Js/jquery.fitvid.js
+                    videoce = typo3conf/ext/videoce/Resources/Public/Js/videoce.js
                 }
-            }
+                jsIncludeAsFooterFile = 0
 
-            metacafe {
-                class = Laxap\Videoce\Domain\Model\MetacafeVideo
-                config {
-                    pattern = #^(?:https?://)?(?:www\.)?(?:metacafe\.com/watch/)([\w]{8})#x
-                    link {
-                        url = https://www.metacafe.com/watch/
-                        urlParam =
-                    }
-                    embed {
-                        url = //www.metacafe.com/embed/
-                        urlParam =
-                        urlParamPlaylist =
-                        iframeAttrib = frameborder="0" allowfullscreen
-                    }
-                    # (not tested)
-                    lightbox {
-                        enabled = 0
-                        url = https://www.metacafe.com/embed/
-                        urlParam = &width=600&height=338
-                    }
-                }
             }
         }
+    }
+}
 
-        rowClass = row
-        colClasses {
-            1 = col-md-12
-            2 = col-md-6
-            3 = col-md-4 col-sm-6
-            4 = col-md-3 col-sm-6
-            6 = col-md-2 col-sm-4
-        }
-
-        clickEnlargeATagRel = prettyPhoto
-
-        jsFiles {
-            jQueryFitvid = typo3conf/ext/videoce/Resources/Public/Js/jquery.fitvid.js
-            videoce = typo3conf/ext/videoce/Resources/Public/Js/videoce.js
-        }
-        jsIncludeAsFooterFile = 0
-
+lib.fluidContent {
+    templateRootPaths {
+        300 = EXT:videoce/Resources/Private/Templates/VideoContent/
     }
 }
