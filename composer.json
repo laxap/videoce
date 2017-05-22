@@ -7,6 +7,10 @@
   "support": {
     "issues": "https://github.com/laxap/bootstrap_grids/issues"
   },
+  "require": {
+    "php": ">=5.5.0",
+    "typo3/cms": "^8.7"
+  },
   "autoload": {
     "psr-4": {
       "Laxap\\Videoce\\": "Classes"
