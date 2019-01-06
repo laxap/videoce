@@ -3,7 +3,7 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. |author| replace:: Pascal Mayer <typo3@bsdist.ch>
+.. |author| replace:: Pascal Mayer <typo3@lascap.ch>
 
 .. |ytpatter| replace:: #^(?:https?://\|//)?(?:www\\.|m\\.)?(?:youtu\\.be/\|youtube\\.com(?:/embed/\|/v/\|/watch\\?v=|/watch\\?.+&v=))([\\w-]{11})#x
 

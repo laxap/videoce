@@ -20,7 +20,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * @package Videoce
- * @author Pascal Mayer <typo3@bsdist.ch>
+ * @author Pascal Mayer <typo3@lascap.ch>
  *
  */
 class VideoContentProcessor implements DataProcessorInterface {

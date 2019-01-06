@@ -16,7 +16,7 @@ namespace Laxap\Videoce\Domain\Model;
 
 /**
  * @package Videoce
- * @author Pascal Mayer <typo3@bsdist.ch>
+ * @author Pascal Mayer <typo3@lascap.ch>
  *
  */
 class YoutubeVideo extends ExternalVideo  {

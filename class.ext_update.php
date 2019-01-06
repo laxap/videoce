@@ -22,7 +22,7 @@ use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 /**
  * This class updates videoce from version 0.8.x to 0.9.x
  * @package Videoce
- * @author Pascal Mayer <typo3@bsdist.ch>
+ * @author Pascal Mayer <typo3@lascap.ch>
  *
  */
 class ext_update {
