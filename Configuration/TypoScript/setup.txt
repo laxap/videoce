@@ -2,9 +2,12 @@
 /* ----------------------------------------
  * Video CE settings
  */
-tt_content.videoce_videocontent =< lib.fluidContent
+tt_content.videoce_videocontent =< lib.contentElement
 tt_content.videoce_videocontent {
     templateName = Show
+    templateRootPaths {
+        10 = EXT:videoce/Resources/Private/Templates/VideoContent/
+    }
     dataProcessing {
         1 = Laxap\Videoce\DataProcessing\VideoContentProcessor
         1 {
@@ -131,11 +134,11 @@ tt_content.videoce_videocontent {
 
                 rowClass = row
                 colClasses {
-                    1 = col-md-12
-                    2 = col-md-6
-                    3 = col-md-4 col-sm-6
-                    4 = col-md-3 col-sm-6
-                    6 = col-md-2 col-sm-4
+                    1 = col-12 col-md-12
+                    2 = col-12 col-md-6
+                    3 = col-12 col-md-4
+                    4 = col-6 col-md-3
+                    6 = col-6 col-sm-4 col-md-2
                 }
 
                 clickEnlargeLinkAttribute = rel="prettyPhoto"
@@ -144,15 +147,9 @@ tt_content.videoce_videocontent {
                     jQueryFitvid = typo3conf/ext/videoce/Resources/Public/Js/jquery.fitvid.js
                     videoce = typo3conf/ext/videoce/Resources/Public/Js/videoce.js
                 }
-                jsIncludeAsFooterFile = 0
+                jsIncludeAsFooterFile = 1
 
             }
         }
-    }
-}
-
-lib.fluidContent {
-    templateRootPaths {
-        300 = EXT:videoce/Resources/Private/Templates/VideoContent/
     }
 }
