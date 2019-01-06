@@ -8,8 +8,7 @@
     "issues": "https://github.com/laxap/bootstrap_grids/issues"
   },
   "require": {
-    "php": ">=5.5.0",
-    "typo3/cms": "^8.7"
+    "typo3/cms": "^9.5"
   },
   "autoload": {
     "psr-4": {
